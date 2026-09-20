@@ -1,10 +1,16 @@
+.vscode/
+
 # Mac OS
 .DS_Store
 
 # Godot-specific ignores
+.godot
 .import/
 export.cfg
 export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+
+*.import
+*.uid

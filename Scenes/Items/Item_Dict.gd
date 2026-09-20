@@ -1,10 +1,10 @@
-extends Reference
+extends RefCounted
 
 class_name ALL_ITEMS_REF
 
 # Dictionary container all the items with their position
 # Default items
-const all_items = {
+static var all_items = {
 	"Iron Sword" : "res://Scenes/Items/Swords/Iron Sword.tscn",
 	"Iron Bow" : "res://Scenes/Items/Bows/Iron Bow.tscn",
 	"Iron Axe" : "res://Scenes/Items/Axes/Iron Axe.tscn",
@@ -41,6 +41,6 @@ func get_item(item_id):
 # Create an item
 func create_item(item_id):
 	var item = load(item_id)
-	var new_item = item.instance()
+	var new_item = item.instantiate()
 	
 	return new_item

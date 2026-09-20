@@ -23,8 +23,8 @@ void fragment(){
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
-shader_param/tiled_factor = Vector2( 3, 3 )
-shader_param/aspect_ratio = 0.5
+shader_parameter/tiled_factor = Vector2( 3, 3 )
+shader_parameter/aspect_ratio = 0.5
 
 [sub_resource type="Animation" id=3]
 resource_name = "Fade"
@@ -36,8 +36,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
@@ -52,8 +52,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 1 ) ]
 }
@@ -61,7 +61,7 @@ tracks/0/keys = {
 [node name="Level" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="YSort" type="YSort" parent="." index="0"]
+[node name="Node2D" type="Node2D" parent="." index="0"]
 z_index = 1
 
 [node name="Background" parent="." index="1"]

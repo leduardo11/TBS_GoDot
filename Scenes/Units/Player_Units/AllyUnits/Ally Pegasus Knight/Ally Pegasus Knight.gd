@@ -1,6 +1,7 @@
 extends Battlefield_Unit
 
 func _ready():
+	super._ready()
 	# Initial Animation
 	$Animation.current_animation = "Idle"
 	
@@ -16,7 +17,7 @@ func _ready():
 	
 	# Lance
 	UnitInventory.usable_weapons.append(Item.WEAPON_TYPE.LANCE)
-	var lance = preload("res://Scenes/Items/Lance/Iron Lance.tscn").instance()
+	var lance = preload("res://Scenes/Items/Lance/Iron Lance.tscn").instantiate()
 	UnitInventory.add_item(lance)
 	
 	# Set combat node

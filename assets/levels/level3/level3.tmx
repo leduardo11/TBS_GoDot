@@ -4,7 +4,7 @@
   <property name="Enemies_to_defeat" type="int" value="15"/>
   <property name="Victory_Condition" value="Defeat All Enemies"/>
  </properties>
- <tileset firstgid="1" source="level3tileset.tsx"/>
+ <tileset firstgid="1" source="Level3Tileset.tsx"/>
  <layer id="1" name="Background" width="15" height="15">
   <data encoding="csv">
 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,

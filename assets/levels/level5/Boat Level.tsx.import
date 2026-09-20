@@ -2,12 +2,13 @@
 
 importer="vnen.tiled_tileset_importer"
 type="TileSet"
-path="res://.import/Boat Level.tsx-8ddf674f7fa49c64e22aae991d793bb4.res"
+uid="uid://bbh3klsljbg3h"
+path="res://.godot/imported/Boat Level.tsx-8ddf674f7fa49c64e22aae991d793bb4.res"
 
 [deps]
 
 source_file="res://assets/levels/level5/Boat Level.tsx"
-dest_files=[ "res://.import/Boat Level.tsx-8ddf674f7fa49c64e22aae991d793bb4.res" ]
+dest_files=["res://.godot/imported/Boat Level.tsx-8ddf674f7fa49c64e22aae991d793bb4.res"]
 
 [params]
 

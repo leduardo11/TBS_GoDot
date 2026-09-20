@@ -1,6 +1,7 @@
 extends Battlefield_Unit
 
 func _ready():
+	super._ready()
 	# Initial Animation
 	$Animation.current_animation = "Idle"
 	
@@ -12,8 +13,8 @@ func _ready():
 	
 	# Weapons and Inventory
 	UnitInventory.usable_weapons.append(Item.WEAPON_TYPE.BOW)
-	UnitInventory.add_item(preload("res://Scenes/Items/Swords/Iron Sword.tscn").instance())
-	UnitInventory.add_item(preload("res://Scenes/Items/Bows/Iron Bow.tscn").instance())
+	UnitInventory.add_item(preload("res://Scenes/Items/Swords/Iron Sword.tscn").instantiate())
+	UnitInventory.add_item(preload("res://Scenes/Items/Bows/Iron Bow.tscn").instantiate())
 	
 	# Set combat node
 	combat_node = preload("res://Scenes/Units/Player_Units/AllyUnits/Ally Archer/Naomi Combat.tscn")

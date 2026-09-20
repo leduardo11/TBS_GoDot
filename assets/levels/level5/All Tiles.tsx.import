@@ -2,12 +2,13 @@
 
 importer="vnen.tiled_tileset_importer"
 type="TileSet"
-path="res://.import/All Tiles.tsx-772226e2d2917d973e73a4256f83e9a9.res"
+uid="uid://de8ctaa7blnty"
+path="res://.godot/imported/All Tiles.tsx-772226e2d2917d973e73a4256f83e9a9.res"
 
 [deps]
 
 source_file="res://assets/levels/level5/All Tiles.tsx"
-dest_files=[ "res://.import/All Tiles.tsx-772226e2d2917d973e73a4256f83e9a9.res" ]
+dest_files=["res://.godot/imported/All Tiles.tsx-772226e2d2917d973e73a4256f83e9a9.res"]
 
 [params]
 

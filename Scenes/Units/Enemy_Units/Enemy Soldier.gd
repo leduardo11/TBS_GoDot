@@ -2,6 +2,7 @@ extends Battlefield_Unit
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	super._ready()
 	$Animation.current_animation = "Idle"
 	UnitMovementStats.is_ally = false
 	
@@ -13,7 +14,7 @@ func _ready():
 	
 	# Add Lance
 	UnitInventory.usable_weapons.append(Item.WEAPON_TYPE.LANCE)
-	var lance = preload("res://Scenes/Items/Lance/Iron Lance.tscn").instance()
+	var lance = preload("res://Scenes/Items/Lance/Iron Lance.tscn").instantiate()
 	UnitInventory.add_item(lance)
 	
 	# Combat sprite

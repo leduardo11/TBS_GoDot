@@ -1,3 +1,4 @@
+@tool
 # The MIT License (MIT)
 #
 # Copyright (c) 2018 Andreas Loew / CodeAndWeb GmbH www.codeandweb.com
@@ -20,51 +21,51 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-tool
 extends EditorImportPlugin
 
 var imageLoader = preload("image_loader.gd").new();
 
 enum Preset { PRESET_DEFAULT }
 
-func get_importer_name():
+func _get_importer_name():
     return "pixijs_import_spritesheet"
 
 
-func get_visible_name():
+func _get_visible_name():
     return "PixiJS SpriteSheet"
 
 
-func get_recognized_extensions():
+func _get_recognized_extensions():
     return ["js", "json"]
 
 
-func get_save_extension():
+func _get_save_extension():
     return "res"
 
 
-func get_resource_type():
+func _get_resource_type():
     return "Resource"
 
 
-func get_preset_count():
+func _get_preset_count():
     return Preset.size()
 
 
-func get_preset_name(preset):
+func _get_preset_name(preset):
     match preset:
         Preset.PRESET_DEFAULT: return "Default"
+    return ""
 
 
-func get_import_options(preset):
+func _get_import_options(path, preset):
     return []
 
 
-func get_option_visibility(option, options):
+func _get_option_visibility(path, option, options):
     return true
 
 
-func get_import_order():
+func _get_import_order():
     return 200
 
 
@@ -79,11 +80,10 @@ func import(source_file, save_path, options, r_platform_variants, r_gen_files):
     var image = load_image(sheetFile, "ImageTexture", [])
     create_atlas_textures(sheetFolder, sheets, image, r_gen_files)
 
-    return ResourceSaver.save("%s.%s" % [save_path, get_save_extension()], Resource.new())
+    return ResourceSaver.save(Resource.new(), "%s.%s" % [save_path, _get_save_extension()])
 func create_folder(folder):
-    var dir = Directory.new()
-    if !dir.dir_exists(folder):
-        if dir.make_dir_recursive(folder) != OK:
+    if !DirAccess.dir_exists_absolute(folder):
+        if DirAccess.make_dir_recursive_absolute(folder) != OK:
             printerr("Failed to create folder: " + folder)
     
     
@@ -116,13 +116,18 @@ func save_resource(name, texture):
 
 
 func read_sprite_sheet(fileName):
-    var file = File.new()
-    if file.open(fileName, file.READ) != OK:
+    var file = FileAccess.open(fileName, FileAccess.READ)
+    if file == null:
         printerr("Failed to load "+fileName)
+        return null
     var text = file.get_as_text()
-    var dict = JSON.parse(text).result
-    if !dict:
+    var test_json_conv = JSON.new()
+    var parse_error = test_json_conv.parse(text)
+    if parse_error != OK:
         printerr("Invalid json data in "+fileName)
+        file.close()
+        return null
+    var dict = test_json_conv.get_data()
     file.close()
     return dict
 

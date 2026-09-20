@@ -43,7 +43,7 @@ func _ready():
 	# Add the players from the y sort to the battle field y sort
 	for player_unit in BattlefieldInfo.y_sort_player_party.get_children():
 		BattlefieldInfo.y_sort_player_party.remove_child(player_unit)
-		BattlefieldInfo.current_level.get_node("YSort").add_child(player_unit)
+		BattlefieldInfo.current_level.get_node("Node2D").add_child(player_unit)
 	
 	# Prep mode
 	preperation_mode()
@@ -61,9 +61,9 @@ func _ready():
 
 func next_level():
 	# Remove any ally units that are still alive
-	for unit in BattlefieldInfo.current_level.get_node("YSort").get_children():
+	for unit in BattlefieldInfo.current_level.get_node("Node2D").get_children():
 		if unit.UnitMovementStats.is_ally:
-			BattlefieldInfo.current_level.get_node("YSort").remove_child(unit)
+			BattlefieldInfo.current_level.get_node("Node2D").remove_child(unit)
 			BattlefieldInfo.y_sort_player_party.add_child(unit)
 
 func start_battle():

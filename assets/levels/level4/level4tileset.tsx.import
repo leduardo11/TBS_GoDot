@@ -2,12 +2,13 @@
 
 importer="vnen.tiled_tileset_importer"
 type="TileSet"
-path="res://.import/level4tileset.tsx-2515689908c8c089d9ce42191c94a877.res"
+uid="uid://d4gliyql5y68p"
+path="res://.godot/imported/level4tileset.tsx-2515689908c8c089d9ce42191c94a877.res"
 
 [deps]
 
 source_file="res://assets/levels/level4/level4tileset.tsx"
-dest_files=[ "res://.import/level4tileset.tsx-2515689908c8c089d9ce42191c94a877.res" ]
+dest_files=["res://.godot/imported/level4tileset.tsx-2515689908c8c089d9ce42191c94a877.res"]
 
 [params]
 

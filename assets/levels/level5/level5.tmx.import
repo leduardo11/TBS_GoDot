@@ -2,12 +2,13 @@
 
 importer="vnen.tiled_importer"
 type="PackedScene"
-path="res://.import/level5.tmx-e2d16246578c7179648c6bd17bc5dfb1.scn"
+uid="uid://dmu7hfqkgm8qt"
+path="res://.godot/imported/level5.tmx-e2d16246578c7179648c6bd17bc5dfb1.scn"
 
 [deps]
 
 source_file="res://assets/levels/level5/level5.tmx"
-dest_files=[ "res://.import/level5.tmx-e2d16246578c7179648c6bd17bc5dfb1.scn" ]
+dest_files=["res://.godot/imported/level5.tmx-e2d16246578c7179648c6bd17bc5dfb1.scn"]
 
 [params]
 
